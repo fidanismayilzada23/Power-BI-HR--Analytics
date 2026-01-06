@@ -1,0 +1,44 @@
+1.Attrition Count = 
+CALCULATE(
+    COUNT('HR_Analytics'[EmpID]),
+    'HR_Analytics'[Attrition] = "Yes")
+
+2. Attrition Count = 
+CALCULATE(
+    COUNT('HR_Analytics'[EmpID]),
+    'HR_Analytics'[Attrition] = "Yes")
+
+
+3. Attrition Rate(%) = DIVIDE([Attrition_Count],[Total Employees],0)
+
+4. Attrition_Count = 
+CALCULATE(
+    COUNT('HR_Analytics'[EmpID]),
+    'HR_Analytics'[Attrition] = "Yes")
+
+5.Average Monthly Income = AVERAGE((HR_Analytics[MonthlyIncome]))
+
+6. avg age = AVERAGE(HR_Analytics[Age])
+
+7.Avg Income(Attrition Yes) = CALCULATE(AVERAGE(HR_Analytics[MonthlyIncome]),HR_Analytics[Attrition]="Yes")
+
+8.Avg Years At Company = AVERAGE(HR_Analytics[YearsAtCompany])
+
+9.Avg Years at Company(Attrition) = CALCULATE(AVERAGE(HR_Analytics[YearsAtCompany]),HR_Analytics[Attrition]="Yes")
+
+10.High Performer Attrition = 
+CALCULATE(
+    COUNT('HR_Analytics'[EmpID]),
+    'HR_Analytics'[Attrition] ="Yes",
+    'HR_Analytics'[PerformanceRating]>= 4)
+
+
+11.High Risk Employees = 
+CALCULATE(
+    COUNT('HR_Analytics'[EmpID]),
+    HR_Analytics[OverTime] = "Yes",
+    HR_Analytics[WorkLifeBalance] <= 2,
+    HR_Analytics[JobSatisfaction] <= 2)
+
+
+
